@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
-import com.example.roomdemo.R
 import com.example.roomdemo.db.users.User
 import com.example.roomdemo.view.recyclerview.UserListAdapter
 import com.example.roomdemo.viewmodel.UsersViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(com.example.roomdemo.R.layout.activity_main)
 
         userViewModel = ViewModelProviders.of(this).get(UsersViewModel::class.java)
 
@@ -30,8 +30,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun createList() {
         val adapter = UserListAdapter(this)
-        userViewModel.allUsers.observe(this, Observer { words ->
-            words?.let { adapter.setUsers(it) }
+        userViewModel.allUsers.observe(this, Observer { users ->
+            users?.let {
+                adapter.setUsers(it)
+                recyclerView.scheduleLayoutAnimation()
+            }
         })
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -40,7 +43,6 @@ class MainActivity : AppCompatActivity() {
     private fun setAnimations() {
         animator.setFlyInLeft(et_firstName)
         animator.setFlyInLeft(et_lastName)
-        animator.setFlyInLeft(recyclerView)
         animator.setFlyInTop(btn_add)
     }
 

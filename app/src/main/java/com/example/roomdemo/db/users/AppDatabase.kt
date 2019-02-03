@@ -52,9 +52,10 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         fun populateDatabase(userDao: UserDao) {
-            val word = User("Dummy", "User")
-            val word2 = User("Dummy", "User")
-            userDao.insertAll(word, word2)
+            if (userDao.getAll().value.isNullOrEmpty()) {
+                val user = User("User", "# ${(1..1000).random()}")
+                userDao.insertAll(user)
+            }
         }
     }
 }

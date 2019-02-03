@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal" android:layout_width="match_parent"
+              android:background="@android:color/holo_blue_light"
+              android:layout_height="wrap_content" android:padding="5dp">
+
+    <TextView
+            android:id="@+id/tv_id"
+            android:text="001"
+            style="@style/word_title"
+            android:layout_weight="0.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/tv_firstName"
+            android:text="Usama"
+            style="@style/word_title"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:id="@+id/tv_lastName"
+            android:text="Zafar"
+            style="@style/word_title"
+            android:layout_height="wrap_content"/>
+</LinearLayout>

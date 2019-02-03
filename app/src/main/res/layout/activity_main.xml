@@ -61,16 +61,4 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="@+id/leftGuideline"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline2"
             android:layout_marginEnd="8dp"/>
-
-    <android.support.design.widget.FloatingActionButton android:layout_width="wrap_content"
-                                                        android:layout_height="wrap_content"
-                                                        android:src="@drawable/ic_add_black_24dp"
-                                                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                                                        android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
-                                                        app:layout_constraintBottom_toBottomOf="parent"
-                                                        style="@style/Widget.Design.FloatingActionButton"
-                                                        app:backgroundTint="@color/colorPrimary"
-                                                        app:backgroundTintMode="src_in" app:fabSize="normal"
-                                                        app:useCompatPadding="true" android:tint="@color/colorPrimary"
-                                                        app:elevation="2dp"/>
 </android.support.constraint.ConstraintLayout>
